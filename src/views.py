@@ -40,7 +40,7 @@ def prediction_view(request):
         print("Credit_History" , Credit_History)
         print("propertyArea", Property_Area)
 
-        loan = prediction(Gender, Married, Dependents, Education, Self_Employed, ApplicantIncome, CoapplicantIncome, LoanAmount,Loan_Amount_Term, Credit_History, Property_Area)
+        loan = prediction(Gender, Married, Dependents, Education, Self_Employed, int(ApplicantIncome), int(CoapplicantIncome), int(LoanAmount),int(Loan_Amount_Term), int(Credit_History), Property_Area)
         
         return render(request,'prediction.html',{'loan':loan})
     return render('request','prediction.html')
